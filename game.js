@@ -80,6 +80,7 @@ const battle = async (stage, player, monster) => {
       case "5": // 인벤토리
         if (Object.keys(player.inventory).length === 0) {
           logs.push(chalk.red("인벤토리가 비어있습니다."));
+          continue;
         } 
         else 
         {
