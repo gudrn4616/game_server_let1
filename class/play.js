@@ -1,13 +1,14 @@
+// 플레이어 클래스: 게임에서 플레이어의 속성과 행동을 정의하는 클래스
 class Player {
-  #maxHp;
-  #hp;
-  #ATK;
-  #df;
-  #runChance;
-  #doubleAttackChance;
-  #slideChance;
-  #inventory;
-  #gold;
+  #maxHp; // 최대 체력
+  #hp; // 현재 체력
+  #ATK; // 공격력
+  #df; // 방어력
+  #runChance; // 도망칠 확률
+  #doubleAttackChance; // 연속 공격 확률
+  #slideChance; // 방어 확률
+  #inventory; // 인벤토리
+  #gold; // 골드
 
   constructor() {
     this.#maxHp = 100;

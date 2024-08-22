@@ -30,22 +30,27 @@ async function enterShop(player, stage) {
 
     if (selectedItem) {
       // 선택한 아이템이 존재하는 경우
-      if (player.gold >= shopItems[selectedItem]) {
-        // 플레이어의 골드가 충분한지 확인
+      if (player.gold >= shopItems[selectedItem]) // 플레이어의 골드가 충분한지 확인
+      {
         player.gold -= shopItems[selectedItem]; // 골드 차감
         player.addItem(selectedItem); // 아이템 추가
         console.log(chalk.green(`${selectedItem}을(를) 구매했습니다.`)); // 구매 성공 메시지 출력
-      } else {
-        console.log(chalk.red("골드가 부족합니다.")); // 골드 부족 메시지 출력
-      }
-    } else if (itemChoice == items.length + 1) {
-      // 상점 나가기 선택한 경우
+      } 
+      else console.log(chalk.red("골드가 부족합니다.")); // 골드 부족 메시지 출력
+    } 
+    else if (itemChoice == items.length + 1) // 상점 나가기 선택한 경우
+    {
       shopping = false; // 쇼핑 상태를 false로 설정
       console.log(chalk.blue("상점가를 떠납니다.")); // 상점 나가기 메시지 출력
-    } else {
-      console.log(chalk.red("올바른 아이템 번호를 입력하세요.")); // 잘못된 입력 메시지 출력
-    }
+    } 
+    else console.log(chalk.red("올바른 아이템 번호를 입력하세요.")); // 잘못된 입력 메시지 출력
   }
 }
 
 export default enterShop;
+
+// 구현한 기능 설명:
+// 이 코드는 플레이어가 상점에 진입하여 아이템을 구매할 수 있는 기능을 구현합니다. 
+// 플레이어는 5층마다 상점에 진입할 수 있으며, 상점에서는 다양한 아이템을 구매할 수 있습니다. 
+// 플레이어는 자신의 골드를 사용하여 아이템을 구매할 수 있으며, 골드가 부족한 경우 구매할 수 없습니다. 
+// 상점에서 나가기를 선택하면 상점을 떠나게 됩니다.
